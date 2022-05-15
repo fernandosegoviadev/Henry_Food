@@ -1,0 +1,120 @@
+* {
+    padding: 0px;
+    color: #707D28;
+}
+
+.card {
+    
+    top: 0px;
+    background-color: #FFE35E;
+    margin-right: 2%; 
+    margin-left: 2%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 1%;
+    text-align: center;
+    width: 250px;
+    height: 450px;
+    border-radius: 5px; 
+    color: black; 
+    border: 2px solid #FEAA09;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.name {
+    position: relative;
+    height: 50px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.score {
+    position: relative;
+    width: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.types {
+    position: relative;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nav-paginado{
+    height: 22px;
+    width: 100%;
+    background-color: #8aa3ffe3;   
+    
+}
+.list-items {
+    list-style-type: none;
+    height: 55px;
+    width: auto;
+    position: relative;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align:center;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.items {
+    font-size: 80%;
+    position: relative;
+    background-color: #F6E3CA;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding-left: auto;
+    padding-right: auto;
+    border-radius: 10%;
+    display:inline-block;
+    text-align:center;      
+    
+}
+
+ /* border: 1px solid rgb(238, 40, 40); */
+ 
+.image {
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    right: 0;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 98%;
+    max-width: 270px;
+    max-height: 200px;
+}
+
+.links-cards{
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+
+    
+
+

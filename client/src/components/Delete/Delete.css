@@ -1,0 +1,19 @@
+
+#select-recipe {
+    height: auto;
+    font-size:medium;
+
+}
+
+#img-delete {
+    max-width: 160px;
+    max-height: 180px;
+}
+
+.delete-box {
+    min-height: 815px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+   
+}

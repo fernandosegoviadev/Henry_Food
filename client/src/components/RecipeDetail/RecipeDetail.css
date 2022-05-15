@@ -1,0 +1,46 @@
+* {
+    padding: 0px;
+
+}
+.main-box {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    min-height: 850px;
+        
+}
+
+.main-card {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    top: 0px;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    list-style-type: none;
+    
+}
+
+.score {
+    display:inline-block;
+    text-align:center;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+
+.summary {
+    text-align: justify;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.step-list {
+    list-style-type: none;
+    text-align: justify;
+    text-indent: 10px
+}
+
+
+

@@ -1,0 +1,8 @@
+#pie {
+    position: absolute;
+    height: 27px;
+    bottom: -26px;
+    width: 100%;
+    background-color: #707D28;
+    color:rgba(254, 252, 180, 0.922);
+}

@@ -1,0 +1,83 @@
+
+
+#div-search {
+    height: 78px;
+    width: 100%;
+    background-color: #FEAA09;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    left: 0;    
+
+}
+
+
+.search {
+    position: relative;
+    top: 19px;
+    align-items: center;
+    color:rgba(254, 252, 180, 0.922);
+}
+
+#input-search {
+    height: 22px;
+    font-size: medium;
+    background-color: #FFE35E;
+    border-color: #D05353;
+}
+
+#btn-search {
+    height: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    font-size: medium;
+    color: #707D28;
+}
+
+#div-list {
+    top: -23px;
+    position: relative;  
+    height: auto;
+    max-width: 270px;
+    left: 10px;
+}
+
+#list-search {
+    position: absolute;
+    left: 0px;
+    background-color: #F6E3CA;
+    list-style: none;
+    padding-left: 10px;
+    padding-right: 10px;    
+    border-left: 20px;
+    max-width: 265px;
+    min-width: 265px;   
+    display: inline;
+    z-index: 100;
+    /* border: 1px solid #D05353;; */
+    text-decoration: none;
+
+   
+}
+.links {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+.items-list-seach{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    text-decoration-line: none;
+
+}
+.items-list:hover {
+    background-color: #FFE35E;
+   
+}

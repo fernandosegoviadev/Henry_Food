@@ -1,0 +1,27 @@
+* {
+    padding: 0px;
+}
+
+.main-box {
+    position: relative;
+    min-height: 780px;
+    width: 100%;
+    top: 0px;
+    border-bottom: 20px;
+    width: 100%;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8E095;
+}
+#cards {
+    height: 100%;
+    position: relative;
+    top: -20px;
+}
+
+#loading {
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
