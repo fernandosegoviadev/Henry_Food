@@ -72,7 +72,7 @@ export default function  Form() {
       if (errorRecipe === "" && errorSummary === "" && errorSteps === "" &&
           errorImageUrl === "" && types.length > 0 && errorScore == "" && errorHealthScore === "" ) {
 
-            axios.post('http://localhost:3001/api/recipes', newRecipe)
+            axios.post('/api/recipes', newRecipe)
             .then((res)=>{  
               
               window.alert(res.data.message)

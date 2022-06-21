@@ -37,7 +37,7 @@ export function Put () {
     
     
     function getListRecipe() { 
-        return axios.get('http://localhost:3001/api/delete') 
+        return axios.get('/api/delete') 
         
         .then((recipes) =>  {
             return setRecipes(recipes.data)
@@ -46,7 +46,7 @@ export function Put () {
     }
   
     function getListDiet() { 
-        return axios.get('http://localhost:3001/api/types') 
+        return axios.get('/api/types') 
         
         .then((diets) =>  {
             return setDiets(diets.data)
@@ -98,7 +98,7 @@ export function Put () {
                 
         axios({
             method: 'put',
-            url: 'http://localhost:3001/api/update',
+            url: '/update',
             data: { recipeId: recipeUpdate.recipeId, dietId: diet.dietId, value: value}
             // {recipeId: "uuid", dietId: "n"}   
         })        

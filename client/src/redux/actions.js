@@ -1,3 +1,4 @@
+import axios from 'axios';
 export const GET_RECIPES = 'GET_RECIPES';
 export const SEARCH_RECIPES = 'SEARCH_RECIPES';
 
@@ -22,11 +23,11 @@ export const FILTER_BD = 'FILTER_BD';
 
 export function getRecipes() {
     return function(dispach) {
-        return fetch('http://localhost:3001/api/recipes')
+        return axios.get('/api/recipes')
 
-        .then(res => res.json())  
+        // .then(res => res.json())  
 
-        .then(recipes => dispach({type: GET_RECIPES, payload: recipes}))
+        .then(recipes => dispach({type: GET_RECIPES, payload: recipes.data}))
 
         .catch(error => console.log(error));
     }
@@ -36,11 +37,11 @@ export function getRecipes() {
 
 export function getSearchRecipes(name) {
     return function(dispach) {
-        return fetch(`http://localhost:3001/api/recipes?name=${name} `)
+        return axios.get(`/api/recipes?name=${name} `)
 
-        .then(res => res.json())       
+        //.then(res => res.json())       
         
-        .then(recipes => dispach({type: SEARCH_RECIPES, payload: recipes}))
+        .then(recipes => dispach({type: SEARCH_RECIPES, payload: recipes.data}))
 
         .catch(error => console.log(error));
     }
@@ -67,12 +68,12 @@ export function clearDetail() {
 export function getDetail({id}) {    
     
     return function(dispach) {
-        return fetch(`http://localhost:3001/api/recipes/${id} `)
+        return axios.get(`/api/recipes/${id} `)
 
-        .then(res => res.json())
+        //.then(res => res.json())
 
         .then( recipe => {
-                return dispach({type: GET_RECIPE_DETAIL, payload: recipe})
+                return dispach({type: GET_RECIPE_DETAIL, payload: recipe.data})
             })
 
         .catch((error) => console.log(error)); 
@@ -109,11 +110,11 @@ export function sortByScore(order) {
 
 export function getDiets () {
     return function(dispach) {
-        return fetch('http://localhost:3001/api/types')
+        return axios.get('/api/types')
 
-        .then(res => res.json()) 
+        //.then(res => res.json()) 
 
-        .then(diets => dispach({type: GET_DIETS, payload: diets}))
+        .then(diets => dispach({type: GET_DIETS, payload: diets.data}))
         
         .catch(error => console.log(error));
     }

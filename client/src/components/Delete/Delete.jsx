@@ -29,7 +29,7 @@ export function Delete () {
     
     
     function getListRecipe() { 
-        return axios.get('http://localhost:3001/api/delete')  
+        return axios.get('/api/delete')  
 
         .then((recipes) =>  {
             return setRecipes(recipes.data)
@@ -65,7 +65,7 @@ export function Delete () {
     function deleteR (id) {
         axios({
             method: 'delete',
-            url: 'http://localhost:3001/api/delete',
+            url: '/api/delete',
             data: id
           })
         .then((response)=>{
