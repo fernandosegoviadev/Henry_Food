@@ -65,7 +65,7 @@ router.get('/', async (req, res, next) => {
 
         else if (diets) { // Si la base de datos no está vacia, devuelvo las dietas
 
-            res.status(200).json(diets)
+            return res.status(200).json(diets)
         }   
         
     } catch (error) {
