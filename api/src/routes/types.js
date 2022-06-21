@@ -17,11 +17,11 @@ router.get('/', async (req, res, next) => {
     let numOfRecipes = 80 // me controla la cantidad de recetas
     try {
         
-        const diets = await Diet.findAll()
+        let diets = await Diet.findAll()
 
         if (diets.length === 0) { // Si está vacia la bd            
             
-            let dietsAPI = axios.get(`https://api.spoonacular.com/recipes/complexSearch?number=${numOfRecipes}&${API_KEY}&addRecipeInformation=true`)
+            let dietsAPI = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?number=${numOfRecipes}&${API_KEY}&addRecipeInformation=true`)
             .then((resp) => {
                 let filterDietsApi = resp.data.results.map( (indice) => {
                     return indice.diets // Me quedo solo con la parte de todo el json que me interesa
@@ -40,15 +40,26 @@ router.get('/', async (req, res, next) => {
                 //     { name: 'vegan' },...
                 //   ]                   
                 
-                Diet.bulkCreate(dietsForBulk);                
+                return Diet.bulkCreate(dietsForBulk)
+                            .then(() => true )
+                            .catch(() => false )                
                 
-                return res.send('Typos de dietas cargados con éxito')
+                
             })
             
             .catch((err) => {
                 res.status(404).send('Error, servidor fuera de servicio');                
                 next(err)
             })
+         
+            if (dietsAPI === true) {
+                diets = await Diet.findAll()
+                return res.status(200).json(diets)
+
+            } else {
+                return res.send('Las dietas no fueron cargadas')
+            }
+
             
         }
 
