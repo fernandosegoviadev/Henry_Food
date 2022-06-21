@@ -6,6 +6,15 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
 } = process.env;
 
+// index.js
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Happy developing');
+}
+if (process.env.NODE_ENV === 'production') {
+  console.log('Happy production');
+}
+
+
 let sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
