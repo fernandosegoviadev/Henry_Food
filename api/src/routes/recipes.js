@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { Recipe, Diet, Op } = require('../db');
 const axios = require('axios');
 
-const { API_KEY } = process.env;
+const { API_KEY, API_KEY2, API_KEY3 } = process.env;
 
 const router = Router();
 
@@ -19,6 +19,10 @@ const router = Router();
 //------------------------------------------------------------------------------
 // Función para hacer el request a la api - le llega name
 //------------------------------------------------------------------------------
+var recipeByApiNotName = []; // sin name
+var expiredApiKey = 1;
+
+
 async function findByNameApi (name) {
 
     let numOfRecipes; // Controla la cantidad de resultados
@@ -35,11 +39,30 @@ async function findByNameApi (name) {
     } else {
         numOfRecipes = 60
         newName = '';
-    } 
+    }
+
+    if (!name && recipeByApiNotName.length === 60) {
+        return recipeByApiNotName;
+    }
+    // console.log('sale el llamado a la api')
+
+    let urlEndPoint; // varía si vence la api key
+
+    if (expiredApiKey === 1 ) {
+        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY}&addRecipeInformation=true`;
+    }
+    if (expiredApiKey === 2 ) {
+        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY2}&addRecipeInformation=true`;
+    }
+    if (expiredApiKey === 3 ) {
+        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY3}&addRecipeInformation=true`;
+    }
+    
+    console.log('sale el llamado a la api con la api key',expiredApiKey);
     
     // Consulto a la API
    
-    recipeByApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY}&addRecipeInformation=true`)             
+    let recipeByApi = await axios.get(urlEndPoint)             
   
     .then((resp) => {
 
@@ -69,8 +92,26 @@ async function findByNameApi (name) {
             
         })
         
+        
         return filterRecipesApi;
     })
+    .catch(()=> []); // Si falla mandame un arreglo vacio
+    
+    console.log(recipeByApi, 'la promesa');
+    
+    if (recipeByApi.length === 0) { // Si recibo un array vacio cambio de api key
+        if (expiredApiKey === 3 ) {
+            expiredApiKey = 1;
+        } else if (expiredApiKey === 2 ) {
+            expiredApiKey = 3;
+        } else {
+            expiredApiKey = 2;
+        }
+    }
+
+    if (!name && recipeByApi.length === 60) {
+        recipeByApiNotName = [...recipeByApi]; // me guardo una copia
+    }
        
     return recipeByApi;
 }
