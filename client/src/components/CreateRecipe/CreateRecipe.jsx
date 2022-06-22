@@ -1,6 +1,6 @@
 import './CreateRecipe.css'
 import React from 'react';
-import { useState, ect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDiets } from '../../redux/actions';
 import axios from "axios";
@@ -39,7 +39,7 @@ export default function  Form() {
 
   const dispatch = useDispatch()
 
-  ect(()=>{ // Cuando se cargue la página
+  useEffect(()=>{ // Cuando se cargue la página
         
     dispatch(getDiets()) // Debo cargar las dietas
     
