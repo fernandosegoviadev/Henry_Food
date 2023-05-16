@@ -49,13 +49,13 @@ async function findByNameApi (name) {
     let urlEndPoint; // varía si vence la api key
 
     if (expiredApiKey === 1 ) {
-        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY}&addRecipeInformation=true`;
+        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&apiKey=${API_KEY}&addRecipeInformation=true`;
     }
     if (expiredApiKey === 2 ) {
-        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY2}&addRecipeInformation=true`;
+        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&apiKey=${API_KEY2}&addRecipeInformation=true`;
     }
     if (expiredApiKey === 3 ) {
-        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&${API_KEY3}&addRecipeInformation=true`;
+        urlEndPoint = `https://api.spoonacular.com/recipes/complexSearch?${newName}number=${numOfRecipes}&apiKey=${API_KEY3}&addRecipeInformation=true`;
     }
     
     console.log('sale el llamado a la api con la api key',expiredApiKey);
