@@ -25,10 +25,10 @@ function NavBar(props) {
             <nav>
                 <ul className="list">
                     <li className="list-item">
-                        <NavLink exact to="/recipes" onClick={getAllRecipes} className="links" >Home</NavLink>
-                        <NavLink exact to="/create" className="links">Create</NavLink>
-                        <NavLink exact to ="/update" className="links">Update</NavLink> 
-                        <NavLink exact to ="/delete" className="links">Remove</NavLink>                         
+                        <NavLink to="/recipes" onClick={getAllRecipes} className="links" >Home</NavLink>
+                        <NavLink to="/create" className="links">Create</NavLink>
+                        <NavLink to ="/update" className="links">Update</NavLink> 
+                        <NavLink to ="/delete" className="links">Remove</NavLink>                         
                     </li>
                 </ul>
             </nav>

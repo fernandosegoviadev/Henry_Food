@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom"; // para poder rutear
+import { Route, Routes, BrowserRouter } from "react-router-dom"; // para poder rutear
 import Home from "./components/Home/Home"; // Me traigo boton
 import Recipes from "./components/Recipes/Recipes"; // Me traigo recipes
 import Detail from "./components/RecipeDetail/RecipeDetail";
@@ -11,7 +11,7 @@ import { Put } from "./components/Put/Put";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -60,9 +60,8 @@ function App() {
             </>
           }
         />
-        <Route path="/" element={<Home />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
