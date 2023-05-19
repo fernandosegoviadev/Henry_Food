@@ -314,7 +314,7 @@ router.get('/:id', async (req, res, next) => {
    
         if ( !isUUID(id) ) { // Si no es un uuid -> voy a la api
   
-            let recipeAPI = axios.get(`https://api.spoonacular.com/recipes/${id}/information/?${API_KEY}`)
+            let recipeAPI = axios.get(`https://api.spoonacular.com/recipes/${id}/information/?apiKey=${API_KEY}`)
              .then((resp) => {
                 
                  let detailsRecipe = {
