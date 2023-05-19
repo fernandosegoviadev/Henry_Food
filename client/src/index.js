@@ -6,10 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'; // Para el ruteo
 import { Provider } from 'react-redux'; // Para envolver la app con el estado global
 import store from './redux/store'; // Me traigo el store
-import dotenv from 'dotenv';
 import axios from 'axios';
 
-dotenv.config();
 
 axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001/';
 
